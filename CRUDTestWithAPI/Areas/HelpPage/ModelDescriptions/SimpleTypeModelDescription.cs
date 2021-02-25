@@ -1,0 +1,6 @@
+namespace CRUDTestWithAPI.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}

@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("scripts", required: false)
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0px;
+            padding: 0px;
+            padding-top: 50px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+        }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+    </style>
+</head>
+<body>
+    <div>
+
+        <div class="row" style="margin:0px;padding:0px">
+            <div class="navbar navbar-inverse navbar-fixed-top" style="margin:0px;padding:0px">
+                <div class="container">
+                    <div class="navbar-header" style="margin:0px;padding:0px">
+                        <span style="font-size:25px;cursor:pointer;text-decoration: none;color:white" class="projectName">@Html.ActionLink("API CRUD Operation", "Index", "Home", new { area = "" }, new { @style = "color:white;text-decoration: none;" })</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding:0px;margin:0px;height:100%;">
+            <div class="col-md-2" style="margin:0px;padding:0px;">
+                <div id="mySidenav" class="sidenav" style="position:fixed;width:200px">
+                    <a href="@Url.Action("Index")">Home</a>
+                    <a href="@Url.Action("CreateAccount")">New Account</a>
+                    @*<a href="@Url.Action("Logout")">Logout</a>*@
+                </div>
+            </div>
+            <div class="col-md-10" style="margin:0px;padding:20px;">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>
+
+
+
+

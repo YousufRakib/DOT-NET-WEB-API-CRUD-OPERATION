@@ -1,0 +1,5 @@
+C:\Users\jakas\OneDrive\Desktop\Problem2\CRUDWithAPI\CRUDTestWithAPI\CommonClasses\bin\Debug\CommonClasses.dll
+C:\Users\jakas\OneDrive\Desktop\Problem2\CRUDWithAPI\CRUDTestWithAPI\CommonClasses\bin\Debug\CommonClasses.pdb
+C:\Users\jakas\OneDrive\Desktop\Problem2\CRUDWithAPI\CRUDTestWithAPI\CommonClasses\obj\Debug\CommonClasses.csproj.CoreCompileInputs.cache
+C:\Users\jakas\OneDrive\Desktop\Problem2\CRUDWithAPI\CRUDTestWithAPI\CommonClasses\obj\Debug\CommonClasses.dll
+C:\Users\jakas\OneDrive\Desktop\Problem2\CRUDWithAPI\CRUDTestWithAPI\CommonClasses\obj\Debug\CommonClasses.pdb
