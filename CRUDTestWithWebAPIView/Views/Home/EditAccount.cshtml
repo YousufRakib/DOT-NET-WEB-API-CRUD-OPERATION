@@ -1,0 +1,60 @@
+﻿@model CommonClass.ViewModel.RegistrationClass
+@{
+    ViewBag.Title = "Edit Account";
+}
+
+@using (Html.BeginForm("EditAccount", "Home", FormMethod.Post, new { @id = "frmLogin" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.UserId)
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6" style="margin-left:80px;">
+
+                <h2 style="text-align:center; margin-left:-170px">Edit Information</h2>
+                <form action="/action_page.php" style="max-width:500px;margin:auto">
+
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                        @Html.TextBoxFor(m => m.Name, new { @class = "input-field", placeholder = "FullName", required = "required" })
+
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "input-field", placeholder = "Email", required = "required" })
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        @Html.TextBoxFor(m => m.Password, new { @class = "input-field", placeholder = "Password", Type = "Password", required = "required" })
+                    </div>
+
+
+                    <button type="submit" class="btn" style="width:64%">Submit</button>
+                </form>
+            </div>
+            <div class="col-xs-3"></div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Custom-css.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+
+}

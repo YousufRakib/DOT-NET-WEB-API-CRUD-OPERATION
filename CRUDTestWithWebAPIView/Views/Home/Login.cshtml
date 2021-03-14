@@ -1,0 +1,63 @@
+﻿@model CommonClass.ViewModel.LoginData
+@{
+    ViewBag.Title = "Login";
+    //Layout = null;
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Custom-css.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6" style="margin-left:80px;">
+
+                    <h2 style="text-align:center;margin-left:-170px">Login Form</h2>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="text-success">@ViewBag.MailMessage</label>
+
+                        </div>
+                    </div>
+
+                    <form action="/action_page.php" style="max-width:700px;margin:auto">
+
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input-field", placeholder = "Email", @required = true })
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "input-field", placeholder = "Password", Type = "Password", @required = true })
+                        </div>
+
+                        <label class="text-danger">@ViewBag.erroseMessage</label>
+
+                        <p>If you don't have an account, please <a href="@Url.Action("CreateAccount", "Home")" class="elements"><span>Create Account</span></a> first</p>
+                        <button type="submit" class="btn" style="width:64%">Submit</button>
+                    </form>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+        </div>
+    }
+</body>
+</html>
